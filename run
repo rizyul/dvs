@@ -28,7 +28,7 @@ function LOGO() {
  ───│    $Green┌─┐┬ ┬┌┬┐┌─┐┌─┐┌─┐┬─┐┬┌─┐┌┬┐  ┬  ┬┌┬┐┌─┐$NC   │───
  ───│    $Green├─┤│ │ │ │ │└─┐│  ├┬┘│├─┘ │   │  │ │ ├┤ $NC   │───
  ───│    $Green┴ ┴└─┘ ┴ └─┘└─┘└─┘┴└─┴┴   ┴   ┴─┘┴ ┴ └─┘$NC   │───
-    │    ${YELLOW}Copyright${FONT} (C)$GRAY https://t.me/rizyul04$NC    │
+    │    ${YELLOW}Copyright${FONT} (C)$GRAY https://t.me/rizyul04$NC        │
     └───────────────────────────────────────────────┘
          ${RED}Autoscript xray vpn lite (multi port)${FONT}    
 ${RED}Make sure the internet is smooth when installing the script${FONT}
@@ -342,7 +342,7 @@ echo -e " ───│                                               │──�
 echo -e " ───│    $Green┌─┐┬ ┬┌┬┐┌─┐┌─┐┌─┐┬─┐┬┌─┐┌┬┐  ┬  ┬┌┬┐┌─┐$NC   │───"
 echo -e " ───│    $Green├─┤│ │ │ │ │└─┐│  ├┬┘│├─┘ │   │  │ │ ├┤ $NC   │───"
 echo -e " ───│    $Green┴ ┴└─┘ ┴ └─┘└─┘└─┘┴└─┴┴   ┴   ┴─┘┴ ┴ └─┘$NC   │───"
-echo -e "    │    ${YELLOW}Copyright${FONT} (C)$GRAY https://t.me/rizyul04$NC   │"
+echo -e "    │    ${YELLOW}Copyright${FONT} (C)$GRAY https://t.me/rizyul04$NC        │"
 echo -e "    └───────────────────────────────────────────────┘"
 echo -e "         ${RED}Autoscript xray vpn lite (multi port)${FONT}"    
 echo -e "${RED}Make sure the internet is smooth when installing the script${FONT}"
@@ -1042,18 +1042,22 @@ domain=$(cat /etc/xray/domain)
     URL="https://api.telegram.org/bot$KEY/sendMessage"
     USRSC=$(curl https://raw.githubusercontent.com/rizyul/regis/main/Ip | grep $ipsaya | awk '{print $2}')
     EXPSC=$(curl https://raw.githubusercontent.com/rizyul/regis/main/Ip | grep $ipsaya | awk '{print $3}')
+    ISP=$(wget -qO- ipinfo.io/org)
+    CITY=$(curl -s ipinfo.io/city)
     TIMES=`date -d "0 days" +"%d-%m-%Y" `
     TIMEZONE=$(printf '%(%H:%M:%S)T')
+    domain=$(cat /etc/xray/domain)
     TEXT="
 <code>────────────────────</code>
 <b>   AUTOSCRIPT DEVILS TUNNEL  </b>
 <code>────────────────────</code>
 <code>Owner  : </code><code>$USRSC</code>
-<code>Domain : </code><code>$(cat /etc/xray/domain)</code>
+<code>Domain : </code><code>$domain</code>
 <code>Date   : </code><code>$TIMES</code>
 <code>Time   : </code><code>$TIMEZONE</code>
 <code>Ip vps : </code><code>$MYIP</code>
 <code>Exp Sc : </code><code>$EXPSC</code>
+<code>Country: </code><code>$CITY</code>
 <code>Isp    : </code><code>$ISP</code>
 <code>────────────────────</code>
 <i>Automatic Notification from</i>
